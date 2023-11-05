@@ -1,0 +1,11 @@
+name: Workflow Run
+#ce worflow se declenche quand lorsque ke worflows Repository Events] est terminé 
+on:
+  workflow_run:
+    workflows: [Repository Events]
+    types: [completed]
+jobs:
+  echo-string:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I was triggered because 'Repository Events' was completed"
