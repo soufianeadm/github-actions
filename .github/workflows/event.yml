@@ -1,0 +1,11 @@
+name: Repository Events
+on: [push, pull_request, issues]
+#https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+jobs:
+  checkout-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+      - uses: actions/checkout@v3
