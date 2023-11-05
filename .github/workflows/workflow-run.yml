@@ -1,9 +1,11 @@
 name: Workflow Run
-#ce worflow se declenche quand lorsque ke worflows Repository Events] est terminé 
+#ce worflow se declenche quand lorsque le worflows Repository Events] est terminé 
 on:
   workflow_run:
     workflows: [Repository Events]
     types: [completed]
+    branches:
+        - main
 jobs:
   echo-string:
     runs-on: ubuntu-latest
