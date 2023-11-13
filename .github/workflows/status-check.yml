@@ -1,6 +1,7 @@
 name: Status Check Functions
 on: [push]
 #https://docs.github.com/en/actions/learn-github-actions/expressions#status-check-functions
+run-name: "Status Check Functions"
 jobs:
   job-1:
     runs-on: ubuntu-latest
