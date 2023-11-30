@@ -1,5 +1,9 @@
 name: Environment Variables
-on: [push,workflow_dispatch]
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
 #https://github.com/github-actions-course/course-code/tree/68d0004d950c8974a8294a6b5f759ff4c1c60cf3
 env:
   WF_LEVEL_ENV: Available to all jobs
