@@ -1,0 +1,30 @@
+name: Caching and Artifacts
+on: [workflow_dispatch]
+jobs:
+  use-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérifier le cache des modules Python
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip
+
+      - name: checkout
+        uses: actions/checkout@v3
+      
+      - name:  install python
+        uses: actions/setup-python@v4
+        
+      - name: pip install
+        run: |
+            pip install google-api-python-client
+            pip install streamlit
+    
+      - name: Sauvegarder le cache des modules Python
+        id: save-cache
+        uses: actions/cache@v2
+        with:
+            path: ~/.cache/pip
+            key: ${{ runner.os }}-pip
