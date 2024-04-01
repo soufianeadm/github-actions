@@ -16,10 +16,18 @@ jobs:
           echo ${{ 'string' == 'String' }}
           echo ${{ true && false }}
           echo ${{ true || (false && true) }}
-      - name: Dump Contexts
+      - name: Dump Contexts GITHUB
         run: |
           echo '${{ toJson(github) }}'
+      - name: Dump Contexts job
+        run: |
           echo '${{ toJson(job) }}'
+      - name: Dump Contexts SECRETS
+        run: |
           echo '${{ toJson(secrets) }}'
+      - name: Dump Contexts STEPS
+        run: |
           echo '${{ toJson(steps) }}'
+      - name: Dump Contexts runner
+        run: |
           echo '${{ toJson(runner) }}'
