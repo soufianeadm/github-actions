@@ -17,6 +17,7 @@ jobs:
           echo ${{ true && false }}
           echo ${{ true || (false && true) }}
       - name: Dump Contexts GITHUB
+        id: soufiane_github
         run: |
           echo '${{ toJson(github) }}'
       - name: Dump Contexts job
